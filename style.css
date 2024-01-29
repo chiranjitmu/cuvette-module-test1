@@ -633,7 +633,7 @@ li::marker {
   }
   .game-rules {
     position: absolute;
-    right: 0;
+    right: 0.5rem;
     width: 18rem;
   }
 
