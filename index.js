@@ -12,12 +12,8 @@ const youimage = document.querySelector("#you-image");
 const pcwinner = document.querySelector(".pc-winner");
 const youwinner = document.querySelector(".you-winner");
 const whowin = document.querySelector("#who-win");
-const youanimationcircle1 = document.querySelector("#you-animationcircle-1");
-const youanimationcircle2 = document.querySelector("#you-animationcircle-2");
-const youanimationcircle3 = document.querySelector("#you-animationcircle-3");
-const pcanimationcircle1 = document.querySelector("#pc-animationcircle-1");
-const pcanimationcircle2 = document.querySelector("#pc-animationcircle-2");
-const pcanimationcircle3 = document.querySelector("#pc-animationcircle-3");
+const youanimationcircles = document.querySelectorAll("#you-animationcircle");
+const pcanimationcircles = document.querySelectorAll("#pc-animationcircle");
 const buttonnext = document.querySelector("#button-next");
 const displayyourscore = document.querySelector("#score-your-display");
 const displaypcscore = document.querySelector("#score-pc-display");
@@ -46,12 +42,8 @@ playagain.addEventListener("click", () => {
   images.style.display = "flex";
   displaywinner.style.display = "none";
   playagain.innerHTML = "PLAY AGAIN";
-  pcanimationcircle1.style.animation = "";
-  pcanimationcircle2.style.animation = "";
-  pcanimationcircle3.style.animation = "";
-  youanimationcircle1.style.animation = "";
-  youanimationcircle2.style.animation = "";
-  youanimationcircle3.style.animation = "";
+  pcanimationcircles.forEach((circle) => (circle.style.animation = ""));
+  youanimationcircles.forEach((circle) => (circle.style.animation = ""));
   buttonnext.style.display = "none";
 });
 
@@ -76,9 +68,9 @@ rockclick.addEventListener("click", () => {
     pcwinner.style.borderColor = "#ffa943";
     playagain.innerHTML = "PLAY AGAIN";
     whowin.innerHTML = "YOU LOST";
-    pcanimationcircle1.style.animation = "animate 2s infinite linear";
-    pcanimationcircle2.style.animation = "animate 2s infinite linear";
-    pcanimationcircle3.style.animation = "animate 2s infinite linear";
+    pcanimationcircles.forEach(
+      (circle) => (circle.style.animation = "animate 2s infinite linear")
+    );
     const updatednumber =
       parseInt(localStorage.getItem("pcscore") || 0, 10) + 1;
     localStorage.setItem("pcscore", updatednumber.toString());
@@ -89,9 +81,9 @@ rockclick.addEventListener("click", () => {
     pcwinner.style.borderColor = "#bd00ff";
     playagain.innerHTML = "PLAY AGAIN";
     whowin.innerHTML = "YOU WIN";
-    youanimationcircle1.style.animation = "animate 2s infinite linear";
-    youanimationcircle2.style.animation = "animate 2s infinite linear";
-    youanimationcircle3.style.animation = "animate 2s infinite linear";
+    youanimationcircles.forEach(
+      (circle) => (circle.style.animation = "animate 2s infinite linear")
+    );
     buttonnext.style.display = "flex";
     const updatednumber =
       parseInt(localStorage.getItem("yourscore") || 0, 10) + 1;
@@ -114,9 +106,9 @@ paperclick.addEventListener("click", () => {
     pcwinner.style.borderColor = "#0074b6";
     playagain.innerHTML = "PLAY AGAIN";
     whowin.innerHTML = "YOU WIN";
-    youanimationcircle1.style.animation = "animate 2s infinite linear";
-    youanimationcircle2.style.animation = "animate 2s infinite linear";
-    youanimationcircle3.style.animation = "animate 2s infinite linear";
+    youanimationcircles.forEach(
+      (circle) => (circle.style.animation = "animate 2s infinite linear")
+    );
     buttonnext.style.display = "flex";
     const updatednumber =
       parseInt(localStorage.getItem("yourscore") || 0, 10) + 1;
@@ -134,9 +126,9 @@ paperclick.addEventListener("click", () => {
     pcwinner.style.borderColor = "#bd00ff";
     playagain.innerHTML = "PLAY AGAIN";
     whowin.innerHTML = "YOU LOST";
-    pcanimationcircle1.style.animation = "animate 2s infinite linear";
-    pcanimationcircle2.style.animation = "animate 2s infinite linear";
-    pcanimationcircle3.style.animation = "animate 2s infinite linear";
+    pcanimationcircles.forEach(
+      (circle) => (circle.style.animation = "animate 2s infinite linear")
+    );
     const updatednumber =
       parseInt(localStorage.getItem("pcscore") || 0, 10) + 1;
     localStorage.setItem("pcscore", updatednumber.toString());
@@ -158,9 +150,9 @@ scissorsclick.addEventListener("click", () => {
     pcwinner.style.borderColor = "#0074b6";
     playagain.innerHTML = "PLAY AGAIN";
     whowin.innerHTML = "YOU LOST";
-    pcanimationcircle1.style.animation = "animate 2s infinite linear";
-    pcanimationcircle2.style.animation = "animate 2s infinite linear";
-    pcanimationcircle3.style.animation = "animate 2s infinite linear";
+    pcanimationcircles.forEach(
+      (circle) => (circle.style.animation = "animate 2s infinite linear")
+    );
     const updatednumber =
       parseInt(localStorage.getItem("pcscore") || 0, 10) + 1;
     localStorage.setItem("pcscore", updatednumber.toString());
@@ -171,9 +163,9 @@ scissorsclick.addEventListener("click", () => {
     pcwinner.style.borderColor = "#ffa943";
     playagain.innerHTML = "PLAY AGAIN";
     whowin.innerHTML = "YOU WIN";
-    youanimationcircle1.style.animation = "animate 2s infinite linear";
-    youanimationcircle2.style.animation = "animate 2s infinite linear";
-    youanimationcircle3.style.animation = "animate 2s infinite linear";
+    youanimationcircles.forEach(
+      (circle) => (circle.style.animation = "animate 2s infinite linear")
+    );
     buttonnext.style.display = "flex";
     const updatednumber =
       parseInt(localStorage.getItem("yourscore") || 0, 10) + 1;
