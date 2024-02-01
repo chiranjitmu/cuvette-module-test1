@@ -1,6 +1,6 @@
 const modal = document.querySelector(".game-rules");
 const closemodal = document.querySelector(".close-button");
-const openmodal = document.querySelector(".rules-button");
+const openmodal = document.querySelector(".modal-button");
 const paperclick = document.querySelector("#paper");
 const scissorsclick = document.querySelector("#scissors");
 const rockclick = document.querySelector("#rock");
